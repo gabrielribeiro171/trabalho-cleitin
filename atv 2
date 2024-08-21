@@ -1,0 +1,24 @@
+fun main() {
+
+    val nome: String = "João Silva"  
+    val idade: Int = 30             
+    var salarioBrutoMensal: Double = 5000.0   
+    val mesesTrabalhados: Int = 12  
+    val quantidadeProdutos: Int = 25 
+
+    val salarioAnualBruto: Double = salarioBrutoMensal * mesesTrabalhados
+
+    val desconto: Double = 2000.0
+    val salarioAnualLiquido: Double = salarioAnualBruto - desconto
+
+    val mensagem: String = "O salário anual líquido de $nome é R$ ${"%.2f".format(salarioAnualLiquido)}."
+
+    println("Nome: $nome")
+    println("Idade: $idade")
+    println("Salário Bruto Mensal: R$ ${"%.2f".format(salarioBrutoMensal)}")
+    println("Meses Trabalhados: $mesesTrabalhados")
+    println("Quantidade de Produtos Comprados: $quantidadeProdutos")
+    println("Salário Anual Bruto: R$ ${"%.2f".format(salarioAnualBruto)}")
+    println("Salário Anual Líquido: R$ ${"%.2f".format(salarioAnualLiquido)}")
+    println(mensagem)
+}
