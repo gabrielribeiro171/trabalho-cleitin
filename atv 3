@@ -1,0 +1,37 @@
+import java.text.DecimalFormat
+
+fun main() {
+
+    val nomeProduto: String = "Smartphone" 
+    val precoUnitario: Double = 1200.0      
+    val quantidadeComprada: Int = 5         
+    val taxaImposto: Double = 15.0           
+    val margemLucro: Double = 20.0           
+
+    val valorTotalSemImpostos: Double = precoUnitario * quantidadeComprada
+
+    val valorImposto: Double = valorTotalSemImpostos * (taxaImposto / 100)
+
+    val valorTotalComImpostos: Double = valorTotalSemImpostos + valorImposto
+
+    val precoVendaNecessario: Double = valorTotalComImpostos * (1 + margemLucro / 100)
+
+    val decimalFormat = DecimalFormat("#,##0.00")
+
+    val valorTotalComImpostosFormatado: String = "R$ ${decimalFormat.format(valorTotalComImpostos)}"
+    val precoVendaNecessarioFormatado: String = "R$ ${decimalFormat.format(precoVendaNecessario)}"
+
+    val mensagemFinal: String = "Produto: $nomeProduto\n" +
+                                "Valor Total com Impostos: $valorTotalComImpostosFormatado\n" +
+                                "Preço de Venda Sugerido: $precoVendaNecessarioFormatado"
+
+    println("Nome do Produto: $nomeProduto")
+    println("Preço Unitário: R$ ${decimalFormat.format(precoUnitario)}")
+    println("Quantidade Comprada: $quantidadeComprada")
+    println("Taxa de Imposto: $taxaImposto%")
+    println("Margem de Lucro: $margemLucro%")
+    println("Valor Total Sem Impostos: R$ ${decimalFormat.format(valorTotalSemImpostos)}")
+    println("Valor do Imposto: R$ ${decimalFormat.format(valorImposto)}")
+    println("Valor Total com Impostos: $valorTotalComImpostosFormatado")
+    println("Preço de Venda Necessário: $precoVendaNecessarioFormatado")
+    println(mensagemFinal)
